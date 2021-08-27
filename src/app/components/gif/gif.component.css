@@ -3,7 +3,13 @@
     grid-template-columns: auto auto auto auto;
     width: 1000px;
     margin: 0 auto;
+    max-height: 100vh;
+   
 }
 .gif img{
     max-width: 250px;
+    /* visibility: hidden; */
+}
+button{
+    background-color: aqua;
 }

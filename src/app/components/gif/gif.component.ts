@@ -1,6 +1,9 @@
+import * as $ from 'jquery';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/service/data.service';
+
+// declare var $:any;
 
 @Component({
   selector: 'app-gif',
@@ -18,11 +21,21 @@ export class GifComponent implements OnInit{
     this.subscription = this.dataService.getGifs()
     .subscribe((response:any)=>{
       this.gifs =response;
-    })
+    });
+    // $(function(){
+      $('.gif').slice(0, 25).show();
+      $('#load').on("click", function(){
+        // $('.gifs').slice(0,25).show();
+      });
+    // });
+
 
     }
     OnDestroy(){
       this.subscription.unsubscribe();
     }
+    // loadMore(){
+
+    // }
 
 }
